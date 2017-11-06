@@ -1,0 +1,51 @@
+1. Hours to complete the project:~ 15-20			
+
+2. Short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Ring Buffer):~ 
+
+At firts it was a little hard to understand what the problem was asking for.But 
+after thorough reading, the concept started being a little clear to me. We had
+to model a ring buffer. A ring buffer contains a list of 4 elements, the buffer
+which is a list, size of type int, and two pointers type int.It was very tricky
+to understand the concept of cyclic wrap-around after that. Once understanding
+that it could be achieved by modding, the concept became clearer. This was a
+very good problem for understanding the use of mod and how we can be efficient
+by using pointers rather than looping through the list.It took a lot of 
+thinking and lot of reading to understand how index first stores the index of 
+the least recently inserted item, and an index last that stores the index one 
+beyond the most recently inserted item. Other than that we just had to write 
+the functions that will be used by client program.
+
+
+   Problem 2 (Guitar String):~ 
+
+In problem 2, we had to create a module that models the vibration of a guitar
+string. We had to write 5 functions, using the functions created in the earlier
+problem. Once I went through the breif reading, I started coding with the 
+instructions provided in the program. The only time I got an issue was when I 
+was writing the tic() function. I though we had to put tic function in a loop,
+so it would do the Karplus-Strong Algorithm.But things started getting clear,
+after I started thinking about it more and reading more. This was not that bad
+as we were only suppose to write five functions.
+
+
+
+   Problem 3 (Interactive Guitar Player):~ 
+
+The third problem was more complicated to understand than problem 1 or 2. I 
+first approached the problem by drawing the guitar keys. Then I went through
+the entire code to figure what is going on where in the program. It was very
+hard first to understand the concept of superpostion but I got a hang of it and
+after quite thinking, I got the hints of what to do. Rather than superposing 37
+notes we had to superpose only 5.  
+
+3. Did you receive any help from classmates, past CS110 students, TAs, or 
+   anyone else? Please list their names:~ 
+As always and the best SI leader Michiele Ocbagabir.
+
+4. Other comments:~ 
+
+Great project to solve. It was very pleasant to hear the music after all that 
+hard work.
