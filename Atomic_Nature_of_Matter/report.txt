@@ -1,38 +1,100 @@
-1. Hours to complete the project: ~25 hours
+1. Hours to complete the ~ Around 25 hours.
 
-2. Provide a short description of how you approached each problem, issues you 
+2. Short description of how you approached each problem, issues you 
    encountered, and how you resolved those issues.
 
-   Problem 1 (Particle Identification): 
-First of all it was very hard to understand where to start the problem. I was
-really confused between bolbs and beads. In the first problem we had to 
-identify the beads which are just blob objects with the mass more than the tau
-value. First we had to implement a class Blolb which includes a constructor,
-add method that adds the pixels passed to the blob object, mass funtion that
-returns mass, and distance function. It was very confusing to update the center
-of mass.We had to update the center of mass by taking the average of the pixels
-and then adding the pixels which increases the mass aswell and updates the 
-coordinates as well. We calculated the euclidean distance using
-the formula ((x1-x2)^2+(y1-y2)^2)^0.5.
+   Problem 1 (Particle Identification):~ 
+     This was a very tough problem, as I could not to decide what to start with
+first, blob.py or blob_finder.py. After reading the comments provided by the
+professor I understood the confusion between blob and beads.The first problem
+asked us to identify the beads which are just blob objects with the mass more
+than the provided by the user. For that we had to implement a class Blob. Blob
+inlcudes a constructor which makes a blob object with everything assigned to 0.
+We then make an add functions that adds the pixels passed to the blob object.It
+was a little difficult to understand how to upgrade the center of mass on every
+pixel but after talking to professor and SI leader i understood we had to 
+update the center of mass by taking the average of the pixels and then adding 
+the pixels which increases the mass aswell and updates the coordinates as well.
+The the function mass was easy as we just had to return number of pixels in the
+blob.Calculating the distance between two blobs was not bad either as we had to
+only return the Eculidean distance between the two pixels, which are the pixels
+being passed in as user arguments. We calculated the euclidean distance using
+the formula ((x1-x2)^2+(y1-y2)^2)^0.5.We were given the string function which
+prints out the blob onbect with its mass(number of pixels) and center of mass
+(x and y coordinates), with 4 values printed after the decimal. 
+		
+	       Then moving on to the blob finder I started in the main function
+taking in the values of P, tau, jpic as command line arguments and stored the 
+value of jpic as a Picture object. Then making another object b which calls the
+blob finder's constructor. Coding the constructor was not that complicated as
+we were given on the comments section what to do. We had to go through two for
+loops which created a blob object at every pixel and also looked for blobs in
+its surroundings. To find the blobs and consider it as the same object we first
+had to make sure, the pixels does not go out of the pictures dimensons, also 
+check if the the passed pixel coordinates is already part of a blob or not and 
+also if it is luminating enough or not to consider it a part of a blob object.
+These were the null call of our function. To implement the findblob we 
+recursively call _findblob on all the side around the current i,j pixel, until
+it terminates itself by falling under one of our base cases. Then the getting
+the beads was just returning a list of all the blobs stored in _blobs, that 
+have the mass(number of P) greater than or equal to the argument provided. I
+also overloaded the built in len function to write get number of blobs present 
+in the _blobs because the professor wanted us to write the main as if it was
+client. We had to print the number of blobs by not accesing any of the blob
+finder data types, so I overloaded the len function. After that implementing 
+the main was not that difficult as I had already taken the user arguments and
+now had to only print out the beads and blobs.First I printed out the total 
+number of blobs with values greater than P and using a for loop that loops 
+through the list of items, returned by blob_object.getbeads(P), I printed out
+the all the values of that list. And for the blobs it was just the length of 
+blob objects followed by the list of blobs that have atleaset 1 mass.  
+       
 
-Then in the blob finder, at first we take in the values of P, tau, jpic as 
-command line arguments and stored the value of jpic as a Picture object.
+   Problem 2 (Particle Tracking):~ 
+           Problem 2 was very very tricky understand first. We had to determine
+how far a bead moved through out the frames provided. In order to do that we 
+had to recognize the beads and make sure it is the same bead and determine how
+far it is moving. We started of by taking the usrr arguments P, tau, delta, and
+the names of all the frames as command line arguments. Then going from the first
+till the last name, we created two Picture objects using two filename of the 
+frames. Then using those two picture objects we created  two blobfinder objects
+and stored there beads in beads1 and beads2. We had to measure the distance 
+between all those beads in these two list and determine the shortest one two
+make sure that is the bead. I did that by making a nested for loop that first
+stored the distance between the bead of one picture with bead of another one.
+If the distance between the current pictures beads that we are compairing comes
+shorter then the shortest distance gets updated to the current shortest 
+distance and we check the distance for out next two beads between the two 
+pictures. We do that for all the beads in all the Pictures of objects and that
+we made from the filenames provided as the command line arguments. We also had
+to make sure that we print out the radial distance that each bead moves from 
+one picture to another with 4 decimal places to the right of decimal point.   
 
-   Problem 2 (Particle Tracking): 
-In problem2 
 
-   Problem 3 (Data Analysis): ...
+   Problem 3 (Data Analysis):~ 
+In the third problem we had to analyze the data produced by bead_tracker.py
+and compute an estimation of the Botzman's constant and Avogadro's number.The
+problem looked and sounded easy but to understand it was the main problem.After
+reading the text in the pdf several times and also doing my own little search
+online, I understood the concept behind it.Well not excatly the concept but 
+actually the formulas and how it worked. First I read all the data provided by
+bead_tracker.py as floats and stored it as a list. Then for every distance
+value in the list i calculated and converted the distance from pixels to meter
+squares. And I made an estimation of the Boltzmann constant(k) by cross
+multipltying the constant variables of the given formula,
+     				D = (kT)/(6*pi*N*P),
+where T is 297 degrees,P is radius of the bead is 0.5*10^-6, N is the viscosity
+of water is 9.135*10-4.To find the Avogadro estimation, I divided k by the 
+universal gas constant R, which is 8.31457.We also had to print both the 
+estimation in a digit after decimal format. 
 
-3. Did you receive help from anyone? List their names, status (classmate, 
-   CS110 grad, TA, other), and the nature of help received.
 
-   Name               Status       Help Received
-   ----               ------       -------------
+3. Did you receive any help from classmates, past CS110 students, TAs, or 
+   anyone else? Please list their names:~ A lot of help on piaaza, Prof Swami
+has always been great to us and helped us in every possible way he can.Our TA
+Yi Ren also helps us a lot and SI leader Michiele is also always there for us.
 
-   ...                ...          ...
 
-4. List any other comments here. Feel free to provide any feedback on how
-   much you learned from doing the assignment, and whether you enjoyed
-   doing it.
-
-   Due to less time I had to skip the report . Sorry
+4. Other comments:~ This was a great project to work on. High level coding
+to understand the introductory materials of computer science. This program show
+us what we can achieve from just simple coding techniques.  
