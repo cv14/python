@@ -1,0 +1,38 @@
+1. Hours to complete the project: ~25 hours
+
+2. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Particle Identification): 
+First of all it was very hard to understand where to start the problem. I was
+really confused between bolbs and beads. In the first problem we had to 
+identify the beads which are just blob objects with the mass more than the tau
+value. First we had to implement a class Blolb which includes a constructor,
+add method that adds the pixels passed to the blob object, mass funtion that
+returns mass, and distance function. It was very confusing to update the center
+of mass.We had to update the center of mass by taking the average of the pixels
+and then adding the pixels which increases the mass aswell and updates the 
+coordinates as well. We calculated the euclidean distance using
+the formula ((x1-x2)^2+(y1-y2)^2)^0.5.
+
+Then in the blob finder, at first we take in the values of P, tau, jpic as 
+command line arguments and stored the value of jpic as a Picture object.
+
+   Problem 2 (Particle Tracking): 
+In problem2 
+
+   Problem 3 (Data Analysis): ...
+
+3. Did you receive help from anyone? List their names, status (classmate, 
+   CS110 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   ...                ...          ...
+
+4. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   Due to less time I had to skip the report . Sorry
